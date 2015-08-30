@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Charity(models.Model):
     classification = models.CharField(max_length=200)7
     name = models.CharField(max_length=300)
