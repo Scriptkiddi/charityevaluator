@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc619242-9efa-4406-9922-2a43743e491e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/charities.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/charity/utils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cost per beneficiary - Sheet1.tsv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/charityevaluator.iml" afterPath="$PROJECT_DIR$/.idea/charityevaluator.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charity/models.py" afterPath="$PROJECT_DIR$/charity/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charityevaluator/settings.py" afterPath="$PROJECT_DIR$/charityevaluator/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bc619242-9efa-4406-9922-2a43743e491e" name="Default" comment="" />
     <ignored path="charityevaluator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -39,8 +30,8 @@
             <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/charity/models.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.2825112" vertical-offset="0" max-vertical-offset="892">
-                    <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="892">
+                    <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
                     <folding />
                   </state>
                 </provider>
@@ -516,8 +507,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/charity/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2825112" vertical-offset="0" max-vertical-offset="892">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="892">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
           <folding />
         </state>
       </provider>
