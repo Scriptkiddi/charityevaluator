@@ -1,6 +1,6 @@
 __author__ = 'fritz'
 import csv
-from charity.models import Charity
+from charity.models import Charity, Comment
 
 def read_tsv_file_to_database():
     with open('charities.csv', newline='') as csvfile:
@@ -28,12 +28,12 @@ def read_tsv_file_to_database():
             except ValueError:
                 cpib = None
 
-            Charity.objects.create(classification=row[0],
-                                   name=row[1],
-                                   number_of_direct_beneficiaries=nofdb,
-                                   number_of_indirect_beneficiaries=nofib,
-                                   annual_cost=annual_cost,
-                                   cost_per_direct_beneficiary=cpdb,
-                                   cost_per_indirect_beneficiary=cpib,
-                                   comments=row[7],
-                                   source=row[8])
+            c = Charity.objects.create(classification=row[0],
+                                       name=row[1],
+                                       number_of_direct_beneficiaries=nofdb,
+                                       number_of_indirect_beneficiaries=nofib,
+                                       annual_cost=annual_cost,
+                                       cost_per_direct_beneficiary=cpdb,
+                                       cost_per_indirect_beneficiary=cpib,
+                                       source=row[8])
+            Comment.objects.create(charity=c, comment=row[7], username="Sanjay")
