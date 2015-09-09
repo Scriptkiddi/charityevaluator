@@ -10,6 +10,7 @@ classifications = [('animals', 'Animals'),
                    ('unclassified', 'Unclassified'),
                    ('women', 'Women')]
 
+
 class Charity(models.Model):
     classification = models.CharField(max_length=200, choices=classifications)
     name = models.CharField(max_length=300)

@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Charity
+from .models import Charity, Comment
 from django.views.generic.edit import UpdateView, CreateView
-from django.core.urlresolvers import reverse_lazy
 # Create your views here.
 
 
