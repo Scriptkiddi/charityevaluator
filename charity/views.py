@@ -1,7 +1,19 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Charity, Comment
 from django.views.generic.edit import UpdateView, CreateView
 # Create your views here.
+
+
+class IndexView(TemplateView):
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['charities'] = Charity.objects.\
+            exclude(logo__isnull=True).\
+            exclude(description__isnull=True).\
+            order_by('-created')[0:4]
+        return context
 
 
 class CharityListView(ListView):
@@ -25,7 +37,8 @@ class CharityDetailView(DetailView):
 
 class CharityUpdateView(UpdateView):
     model = Charity
-    fields = ['number_of_direct_beneficiaries',
+    fields = ['description',
+              'number_of_direct_beneficiaries',
               'number_of_indirect_beneficiaries',
               'annual_cost',
               'cost_per_direct_beneficiary',
@@ -39,6 +52,7 @@ class CharityCreateView(CreateView):
     model = Charity
     fields = ['classification',
               'name',
+              'description',
               'number_of_direct_beneficiaries',
               'number_of_indirect_beneficiaries',
               'annual_cost',

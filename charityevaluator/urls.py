@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from charity.views import CharityListView, CharityDetailView, CharityUpdateView, CharityCreateView
+from charity.views import CharityListView, CharityDetailView, CharityUpdateView, CharityCreateView, IndexView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^$', IndexView.as_view(), name="home"),
     url(r'^charities/$', CharityListView.as_view(), name="charity-list"),
     url(r'^charities/create$', CharityCreateView.as_view(), name="charity-create"),
     url(r'^charities/(?P<pk>[0-9]+)/$', CharityDetailView.as_view(), name='charity-detail'),

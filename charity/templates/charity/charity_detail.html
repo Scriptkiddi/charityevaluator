@@ -17,7 +17,12 @@
                     <img style="height:140px; float:left" src="{{ object.logo }}" class="thumbnail"></td></tr>
                 {% endif %}
             <table class="table table-hover">
-
+                {% if object.description %}
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ object.description }}</td>
+                    </tr>
+                {% endif %}
                 {% if object.number_of_direct_beneficiaries %}
                     <tr>
                         <td>Number of direct beneficiaries</td>

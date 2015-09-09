@@ -12,16 +12,17 @@ classifications = [('animals', 'Animals'),
 
 
 class Charity(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
     classification = models.CharField(max_length=200, choices=classifications, default="unclassified")
     name = models.CharField(max_length=300)
     description = models.TextField()
-    number_of_direct_beneficiaries = models.IntegerField(null=True)
-    number_of_indirect_beneficiaries = models.IntegerField(null=True)
-    annual_cost = models.FloatField(null=True)
-    cost_per_direct_beneficiary = models.FloatField(null=True)
-    cost_per_indirect_beneficiary = models.FloatField(null=True)
+    number_of_direct_beneficiaries = models.IntegerField(null=True, blank=True)
+    number_of_indirect_beneficiaries = models.IntegerField(null=True, blank=True)
+    annual_cost = models.FloatField(null=True, blank=True)
+    cost_per_direct_beneficiary = models.FloatField(null=True, blank=True)
+    cost_per_indirect_beneficiary = models.FloatField(null=True, blank=True)
     source = models.TextField()
-    logo = models.URLField(null=True)
+    logo = models.URLField(null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse_lazy('charity-detail', kwargs={'pk': self.id})
