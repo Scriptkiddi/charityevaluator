@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="page-header">
+
+
+      <h1>{{ object.name }} <small>{{ object.classification }}</small></h1>
+
+    </div>
+{% endblock %}
+
+{%  block content %}
+    <h3>Details</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% if object.logo %}
+                    <img style="height:140px; float:left" src="{{ object.logo }}" class="thumbnail"></td></tr>
+                {% endif %}
+            <table class="table table-hover">
+
+                {% if object.number_of_direct_beneficiaries %}
+                    <tr>
+                        <td>Number of direct beneficiaries</td>
+                        <td>{{ object.number_of_direct_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.number_of_indirect_beneficiaries %}
+                    <tr>
+                        <td>Number of indirect beneficiaries</td>
+                        <td>{{ object.number_of_indirect_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.annual_cost %}
+                    <tr>
+                        <td>Annual Cost</td>
+                        <td>{{ object.annual_cost }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.cost_per_direct_beneficiary %}
+                    <tr>
+                        <td>Cost per direct beneficiary</td>
+                        <td>{{ object.cost_per_direct_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.cost_per_indirect_beneficiary %}
+                    <tr>
+                        <td>Cost per indirect beneficiary</td>
+                        <td>{{ object.cost_per_indirect_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.source %}
+                    <tr>
+                        <td>This information is from</td>
+                        <td><a href="{{ object.source }}">{{ object.source }}</a></td>
+                    </tr>
+                {% endif %}
+
+            </table>
+
+        </div>
+        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+    </div>
+    <hr>
+    <h3>Comments</h3>
+    {% for comment in comments %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Comment from {{ comment.username }} at {{ comment.date }}</h3>
+          </div>
+          <div class="panel-body">
+              {{ comment.comment }}
+         </div>
+        </div>
+    {% endfor %}
+
+{%  endblock %}
