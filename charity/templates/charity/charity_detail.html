@@ -60,17 +60,6 @@
         </div>
         <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
     </div>
-    <hr>
-    <h3>Comments</h3>
-    {% for comment in comments %}
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Comment from {{ comment.username }} at {{ comment.date }}</h3>
-          </div>
-          <div class="panel-body">
-              {{ comment.comment }}
-         </div>
-        </div>
-    {% endfor %}
+    {% include 'charity/comments.html' %}
 
 {%  endblock %}

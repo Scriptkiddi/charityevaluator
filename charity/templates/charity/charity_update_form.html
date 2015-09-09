@@ -20,17 +20,6 @@
         </div>
 
     </div>
-    <hr>
-    <h3>Comments</h3>
-    {% for comment in comments %}
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Comment from {{ comment.username }} at {{ comment.date }}</h3>
-          </div>
-          <div class="panel-body">
-              {{ comment.comment }}
-         </div>
-        </div>
-    {% endfor %}
+    {% include 'charity/comments.html' %}
 
 {%  endblock %}
