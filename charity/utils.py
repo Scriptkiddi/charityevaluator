@@ -36,4 +36,5 @@ def read_tsv_file_to_database():
                                        cost_per_direct_beneficiary=cpdb,
                                        cost_per_indirect_beneficiary=cpib,
                                        source=row[8])
-            Comment.objects.create(charity=c, comment=row[7], username="Sanjay")
+            if row[7]:
+                Comment.objects.create(charity=c, comment=row[7], username="Sanjay")
