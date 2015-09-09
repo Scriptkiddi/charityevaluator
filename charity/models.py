@@ -12,7 +12,7 @@ classifications = [('animals', 'Animals'),
 
 
 class Charity(models.Model):
-    classification = models.CharField(max_length=200, choices=classifications)
+    classification = models.CharField(max_length=200, choices=classifications, default="unclassified")
     name = models.CharField(max_length=300)
     description = models.TextField()
     number_of_direct_beneficiaries = models.IntegerField(null=True)
@@ -21,7 +21,7 @@ class Charity(models.Model):
     cost_per_direct_beneficiary = models.FloatField(null=True)
     cost_per_indirect_beneficiary = models.FloatField(null=True)
     source = models.TextField()
-    logo = models.URLField(null=True, default="http://media.makerble.com.s3-eu-west-1.amazonaws.com/production/storage/charities/143/logos/small/SCT_logo.jpeg?1425474633")
+    logo = models.URLField(null=True)
 
     def get_absolute_url(self):
         return reverse_lazy('charity-detail', kwargs={'pk': self.id})
