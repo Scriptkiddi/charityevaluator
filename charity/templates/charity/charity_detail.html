@@ -10,7 +10,7 @@
 {% endblock %}
 
 {%  block content %}
-    <h3>Details 01/2015-12/2015</h3>
+    <h3>Details 2015</h3>
     <div class="panel panel-default">
         <div class="panel-body">
             {% if object.logo %}
@@ -115,7 +115,7 @@
             </table>
 
         </div>
-        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Add</button></a>
+        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button></a>
     </div>
     {% include 'charity/comments.html' %}
 
