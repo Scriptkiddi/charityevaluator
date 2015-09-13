@@ -10,12 +10,64 @@
 {% endblock %}
 
 {%  block content %}
-    <h3>Details</h3>
+    <h3>Details 01/2015-12/2015</h3>
     <div class="panel panel-default">
         <div class="panel-body">
             {% if object.logo %}
                     <img style="height:140px; float:left" src="{{ object.logo }}" class="thumbnail"></td></tr>
                 {% endif %}
+            <table class="table table-hover">
+                {% if object.description %}
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ object.description }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.number_of_direct_beneficiaries %}
+                    <tr>
+                        <td>Number of direct beneficiaries</td>
+                        <td>{{ object.number_of_direct_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.number_of_indirect_beneficiaries %}
+                    <tr>
+                        <td>Number of indirect beneficiaries</td>
+                        <td>{{ object.number_of_indirect_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.annual_cost %}
+                    <tr>
+                        <td>Annual Cost</td>
+                        <td>{{ object.annual_cost }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.cost_per_direct_beneficiary %}
+                    <tr>
+                        <td>Cost per direct beneficiary</td>
+                        <td>{{ object.cost_per_direct_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.cost_per_indirect_beneficiary %}
+                    <tr>
+                        <td>Cost per indirect beneficiary</td>
+                        <td>{{ object.cost_per_indirect_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.source %}
+                    <tr>
+                        <td>This information is from</td>
+                        <td><a href="{{ object.source }}">{{ object.source }}</a></td>
+                    </tr>
+                {% endif %}
+
+            </table>
+
+        </div>
+        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+    </div><h3>Historic</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            2014 
             <table class="table table-hover">
                 {% if object.description %}
                     <tr>
