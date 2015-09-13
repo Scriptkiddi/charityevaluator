@@ -67,7 +67,7 @@
     </div><h3>Historic</h3>
     <div class="panel panel-default">
         <div class="panel-body">
-            2014 
+            2014 (1/2014-12/2014)
             <table class="table table-hover">
                 {% if object.description %}
                     <tr>
@@ -115,7 +115,7 @@
             </table>
 
         </div>
-        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-add" aria-hidden="true"></span> Add</button></a>
     </div>
     {% include 'charity/comments.html' %}
 
