@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_extensions',
     'bootstrap3',
+    'django_countries',
+    'taggit',
     'charity'
 )
 

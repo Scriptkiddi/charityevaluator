@@ -12,9 +12,6 @@
     <tr>
         <th>Classification</th>
         <th>Name</th>
-        <th># of direct beneficiaries</th>
-        <th># of indirect beneficiaries</th>
-        <th>annual cost</th>
         <th>cost per direct beneficiary</th>
         <th>cost per indirect beneficiary</th>
     </tr>
@@ -22,11 +19,8 @@
           <tr>
             <td>{{ charity.classification }}</td>
             <td>{{ charity.name }}</td>
-            <td>{{ charity.number_of_direct_beneficiaries }}</td>
-            <td>{{ charity.number_of_indirect_beneficiaries }}</td>
-            <td>{{ charity.annual_cost}}</td>
-            <td>{{ charity.cost_per_direct_beneficiary }}</td>
-            <td>{{ charity.cost_per_indirect_beneficiary }}</td>
+            <td>{{ charity.last_financialyear.cost_per_direct_beneficiary }}</td>
+            <td>{{ charity.last_financialyear.cost_per_indirect_beneficiary }}</td>
             <td><a href="{% url 'charity-detail' pk=charity.id %}"><button type="button" class="btn btn-primary">More</button></a></td>
           </tr>
       {% endfor %}

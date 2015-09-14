@@ -10,7 +10,7 @@
 {% endblock %}
 
 {%  block content %}
-    <h3>Details 2015</h3>
+    <h3>Details {{ last_financialyear.start_date.year }}</h3>
     <div class="panel panel-default">
         <div class="panel-body">
             {% if object.logo %}
@@ -23,34 +23,40 @@
                         <td>{{ object.description }}</td>
                     </tr>
                 {% endif %}
-                {% if object.number_of_direct_beneficiaries %}
+                {% if last_financialyear.number_of_direct_beneficiaries %}
                     <tr>
                         <td>Number of direct beneficiaries</td>
-                        <td>{{ object.number_of_direct_beneficiaries }}</td>
+                        <td>{{ last_financialyear.number_of_direct_beneficiaries }}</td>
                     </tr>
                 {% endif %}
-                {% if object.number_of_indirect_beneficiaries %}
+                {% if last_financialyear.number_of_indirect_beneficiaries %}
                     <tr>
                         <td>Number of indirect beneficiaries</td>
-                        <td>{{ object.number_of_indirect_beneficiaries }}</td>
+                        <td>{{ last_financialyear.number_of_indirect_beneficiaries }}</td>
                     </tr>
                 {% endif %}
-                {% if object.annual_cost %}
+                {% if last_financialyear.annual_cost %}
                     <tr>
                         <td>Annual Cost</td>
-                        <td>{{ object.annual_cost }}</td>
+                        <td>{{ last_financialyear.annual_cost }}</td>
                     </tr>
                 {% endif %}
-                {% if object.cost_per_direct_beneficiary %}
+                {% if last_financialyear.cost_per_direct_beneficiary %}
                     <tr>
                         <td>Cost per direct beneficiary</td>
-                        <td>{{ object.cost_per_direct_beneficiary }}</td>
+                        <td>{{ last_financialyear.cost_per_direct_beneficiary }}</td>
                     </tr>
                 {% endif %}
-                {% if object.cost_per_indirect_beneficiary %}
+                {% if last_financialyear.cost_per_indirect_beneficiary %}
                     <tr>
                         <td>Cost per indirect beneficiary</td>
-                        <td>{{ object.cost_per_indirect_beneficiary }}</td>
+                        <td>{{ last_financialyear.cost_per_indirect_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.country.name %}
+                    <tr>
+                        <td>Country</td>
+                        <td><img src="{{ object.country.flag }}"\>  {{ object.country.name }}</td>
                     </tr>
                 {% endif %}
                 {% if object.source %}
@@ -65,50 +71,52 @@
         </div>
         <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
     </div><h3>Historic</h3>
+    {% for data in financialyears %}
     <div class="panel panel-default">
         <div class="panel-body">
-            2014 (1/2014-12/2014)
+
+            {{ data.start_date.year }} ({{ data.start_date.month }}/{{ data.start_date.year }}-{{ data.end_date.month }}/{{ data.end_date.year }})
             <table class="table table-hover">
-                {% if object.description %}
+                {% if data.description %}
                     <tr>
                         <td>Description</td>
-                        <td>{{ object.description }}</td>
+                        <td>{{ data.description }}</td>
                     </tr>
                 {% endif %}
-                {% if object.number_of_direct_beneficiaries %}
+                {% if data.number_of_direct_beneficiaries %}
                     <tr>
                         <td>Number of direct beneficiaries</td>
-                        <td>{{ object.number_of_direct_beneficiaries }}</td>
+                        <td>{{ data.number_of_direct_beneficiaries }}</td>
                     </tr>
                 {% endif %}
-                {% if object.number_of_indirect_beneficiaries %}
+                {% if data.number_of_indirect_beneficiaries %}
                     <tr>
                         <td>Number of indirect beneficiaries</td>
-                        <td>{{ object.number_of_indirect_beneficiaries }}</td>
+                        <td>{{ data.number_of_indirect_beneficiaries }}</td>
                     </tr>
                 {% endif %}
-                {% if object.annual_cost %}
+                {% if data.annual_cost %}
                     <tr>
                         <td>Annual Cost</td>
-                        <td>{{ object.annual_cost }}</td>
+                        <td>{{ data.annual_cost }}</td>
                     </tr>
                 {% endif %}
-                {% if object.cost_per_direct_beneficiary %}
+                {% if data.cost_per_direct_beneficiary %}
                     <tr>
                         <td>Cost per direct beneficiary</td>
-                        <td>{{ object.cost_per_direct_beneficiary }}</td>
+                        <td>{{ data.cost_per_direct_beneficiary }}</td>
                     </tr>
                 {% endif %}
-                {% if object.cost_per_indirect_beneficiary %}
+                {% if data.cost_per_indirect_beneficiary %}
                     <tr>
                         <td>Cost per indirect beneficiary</td>
-                        <td>{{ object.cost_per_indirect_beneficiary }}</td>
+                        <td>{{ data.cost_per_indirect_beneficiary }}</td>
                     </tr>
                 {% endif %}
-                {% if object.source %}
+                {% if data.source %}
                     <tr>
                         <td>This information is from</td>
-                        <td><a href="{{ object.source }}">{{ object.source }}</a></td>
+                        <td><a href="{{ data.source }}">{{ data.source }}</a></td>
                     </tr>
                 {% endif %}
 
@@ -117,6 +125,7 @@
         </div>
         <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button></a>
     </div>
+    {% endfor %}
     {% include 'charity/comments.html' %}
 
 {%  endblock %}
