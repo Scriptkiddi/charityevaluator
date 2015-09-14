@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'django_countries',
     'taggit',
+    'endless_pagination',
     'charity'
 )
 
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },

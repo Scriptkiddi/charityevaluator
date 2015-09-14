@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-
+{% load endless %}
 {%  block content %}
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
+  <div class="panel-heading">Panel heading </div>
+<a class="btn btn-default " href="{% url 'charity-csv-download' %}" role="button"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>Download</a>
   <div class="panel-body">
     <!-- Table -->
 
@@ -15,16 +16,20 @@
         <th>cost per direct beneficiary</th>
         <th>cost per indirect beneficiary</th>
     </tr>
+  {% paginate object_list %}
       {% for charity in object_list %}
           <tr>
             <td>{{ charity.classification }}</td>
             <td>{{ charity.name }}</td>
-            <td>{{ charity.last_financialyear.cost_per_direct_beneficiary }}</td>
-            <td>{{ charity.last_financialyear.cost_per_indirect_beneficiary }}</td>
+            <td>{{ charity.latest_financial_year.cost_per_direct_beneficiary }}</td>
+            <td>{{ charity.latest_financial_year.cost_per_indirect_beneficiary }}</td>
             <td><a href="{% url 'charity-detail' pk=charity.id %}"><button type="button" class="btn btn-primary">More</button></a></td>
           </tr>
       {% endfor %}
   </table>
+<a class="btn btn-default " href="{% url 'charity-csv-download' %}" role="button"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>Download</a>
+{% show_pages %}
 
 </div>
+
 {%  endblock %}

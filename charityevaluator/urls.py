@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from charity.views import CharityListView, CharityDetailView, CharityUpdateView, CharityCreateView, IndexView
+from charity.views import CharityListView, CharityDetailView, CharityUpdateView, CharityCreateView, IndexView, get_charities_csv
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^charities/create$', CharityCreateView.as_view(), name="charity-create"),
     url(r'^charities/(?P<pk>[0-9]+)/$', CharityDetailView.as_view(), name='charity-detail'),
     url(r'^charities/(?P<pk>[0-9]+)/update$', CharityUpdateView.as_view(), name='charity-detail-update'),
+    url(r'^charities/download$', get_charities_csv, name='charity-csv-download'),
 ]

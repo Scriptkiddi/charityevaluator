@@ -1,8 +1,7 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Charity, Comment
 from django.views.generic.edit import UpdateView, CreateView
-# Create your views here.
-from django.db.models import Q, Max
+from djqscsv import render_to_csv_response
 
 
 class IndexView(TemplateView):
@@ -20,22 +19,12 @@ class IndexView(TemplateView):
 class CharityListView(ListView):
 
     model = Charity
+    paginate_by = 10
 
     def get_queryset(self):
-        queryset = Charity.objects.all()
-        for charity in queryset:
-            fyear = charity.financialyear_set.order_by('-start_date').first()
-
-            if not fyear:
-                queryset = queryset.exclude(id=charity.id)
-                continue
-            if not fyear.cost_per_direct_beneficiary and not fyear.cost_per_indirect_beneficiary:
-                queryset = queryset.exclude(id=charity.id)
-
-        print(queryset)
-        queryset = queryset.annotate(Max('financialyear__cost_per_direct_beneficiary')).order_by('-financialyear__cost_per_direct_beneficiary__max')
-        print(queryset)
-
+        queryset = Charity.objects.all().\
+            exclude(latest_financial_year__cost_per_direct_beneficiary__isnull=True).\
+            order_by('-latest_financial_year__cost_per_direct_beneficiary')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -78,3 +67,7 @@ class CharityCreateView(CreateView):
               'cost_per_indirect_beneficiary',
               'source',
               'logo']
+
+def get_charities_csv(request):
+    queryset = Charity.objects.all()
+    return render_to_csv_response(queryset)

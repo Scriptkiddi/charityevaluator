@@ -34,7 +34,7 @@ class Charity(models.Model):
     logo = models.URLField(null=True, blank=True)
     country = CountryField()
     #tags = TaggableManager(through='TaggedCharity')
-    latest_financial_year = models.ForeignKey('FinancialYear', related_name="latest_year")
+    latest_financial_year = models.ForeignKey('FinancialYear', related_name="latest_year", null=True)
 
     def get_absolute_url(self):
         return reverse_lazy('charity-detail', kwargs={'pk': self.id})
@@ -56,8 +56,8 @@ class FinancialYear(models.Model):
     cost_per_indirect_beneficiary = models.FloatField(null=True, blank=True)
     source = models.TextField()
     charity = models.ForeignKey(Charity)
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
+    start_date = models.DateTimeField(null=True)
+    end_date = models.DateTimeField(null=True)
 
 
 class Comment(models.Model):
