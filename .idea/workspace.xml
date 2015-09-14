@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc619242-9efa-4406-9922-2a43743e491e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charity/templates/charity/charity_list.html" afterPath="$PROJECT_DIR$/charity/templates/charity/charity_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charity/models.py" afterPath="$PROJECT_DIR$/charity/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charityevaluator/settings.py" afterPath="$PROJECT_DIR$/charityevaluator/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charityevaluator/urls.py" afterPath="$PROJECT_DIR$/charityevaluator/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charity/utils.py" afterPath="$PROJECT_DIR$/charity/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charity/views.py" afterPath="$PROJECT_DIR$/charity/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="charityevaluator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,38 +29,28 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/charity/models.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.74651814" vertical-offset="150" max-vertical-offset="1368">
-                    <caret line="53" column="58" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
-                    <folding>
-                      <element signature="e#0#28#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="charityevaluator" />
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charity/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1494">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charityevaluator/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="630">
               <caret line="27" column="78" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="78" />
               <folding>
                 <element signature="e#625#666#0" expanded="true" />
@@ -69,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/charity/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.49723756" vertical-offset="0" max-vertical-offset="1386">
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
               </folding>
@@ -94,7 +84,7 @@
       <file leaf-file-name="djqscsv.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/djqscsv/djqscsv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.0" vertical-offset="1564" max-vertical-offset="3618">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="3618">
               <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
               <folding />
             </state>
@@ -104,7 +94,7 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charity/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+            <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="900">
               <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
               <folding>
                 <element signature="e#21#31#0" expanded="true" />
@@ -113,32 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="managers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/taggit/managers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2572" max-vertical-offset="10152">
-              <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fields.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/django_countries/fields.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4752">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="charity_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charity/templates/charity/charity_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.185185" vertical-offset="922" max-vertical-offset="2448">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1278" max-vertical-offset="2448">
               <caret line="71" column="173" selection-start-line="71" selection-start-column="108" selection-end-line="71" selection-end-column="173" />
               <folding />
             </state>
@@ -148,18 +116,30 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charityevaluator/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2178">
-              <caret line="71" column="57" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="2232">
+              <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="charity_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="charity_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charity/templates/charity/charity_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12485549" vertical-offset="0" max-vertical-offset="865">
-              <caret line="6" column="165" selection-start-line="6" selection-start-column="165" selection-end-line="6" selection-end-column="165" />
+            <state vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="1062">
+              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+              <folding>
+                <element signature="e#1728#1867#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-44.703705" vertical-offset="1097" max-vertical-offset="2592">
+              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -176,21 +156,21 @@
         <option value="$PROJECT_DIR$/charity/static/charity/css/heroic-features.css" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity-detail.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity-list.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/comments.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity_form.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity_update_form.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/navbar.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity_detail.html" />
-        <option value="$PROJECT_DIR$/charity/models.py" />
         <option value="$PROJECT_DIR$/charity/utils.py" />
         <option value="$PROJECT_DIR$/charityevaluator/urls.py" />
         <option value="$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/djqscsv/__init__.py" />
         <option value="$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/djqscsv/djqscsv.py" />
-        <option value="$PROJECT_DIR$/charity/views.py" />
         <option value="$PROJECT_DIR$/charityevaluator/settings.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/charity/templates/charity/charity_list.html" />
+        <option value="$PROJECT_DIR$/charity/models.py" />
+        <option value="$PROJECT_DIR$/charity/views.py" />
       </list>
     </option>
   </component>
@@ -697,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,13 +878,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/charities.csv">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.142857" vertical-offset="0" max-vertical-offset="1908">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/charity/templates/charity/charity_form.html">
@@ -932,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2556">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="117" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="702">
@@ -960,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="648">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="360">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,43 +985,15 @@
     </entry>
     <entry file="file://$USER_HOME$/Envs/charityevaluator/lib/python3.4/site-packages/djqscsv/djqscsv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.0" vertical-offset="1564" max-vertical-offset="3618">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="3618">
           <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/charity/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74651814" vertical-offset="150" max-vertical-offset="1368">
-          <caret line="53" column="58" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charityevaluator/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="2178">
-          <caret line="71" column="57" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/charity/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/charity/templates/charity/charity_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.185185" vertical-offset="922" max-vertical-offset="2448">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1278" max-vertical-offset="2448">
           <caret line="71" column="173" selection-start-line="71" selection-start-column="108" selection-end-line="71" selection-end-column="173" />
           <folding />
         </state>
@@ -1069,11 +1009,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/charityevaluator/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="2232">
+          <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-44.703705" vertical-offset="1097" max-vertical-offset="2592">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/charity/templates/charity/charity_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12485549" vertical-offset="0" max-vertical-offset="865">
-          <caret line="6" column="165" selection-start-line="6" selection-start-column="165" selection-end-line="6" selection-end-column="165" />
-          <folding />
+        <state vertical-scroll-proportion="-23.333334" vertical-offset="0" max-vertical-offset="1062">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+          <folding>
+            <element signature="e#1728#1867#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charity/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1494">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charity/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49723756" vertical-offset="0" max-vertical-offset="1386">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

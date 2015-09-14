@@ -4,6 +4,9 @@ from django_countries.fields import CountryField
 from taggit.managers import TaggableManager
 from taggit.models import TagBase, GenericTaggedItemBase
 from django.utils.translation import ugettext_lazy as _
+from moneyed import USD
+from djmoney.models.fields import MoneyField
+
 
 # Create your models here.
 classifications = [('animals', 'Animals'),
@@ -51,13 +54,17 @@ class TaggedCharity(GenericTaggedItemBase):
 class FinancialYear(models.Model):
     number_of_direct_beneficiaries = models.IntegerField(null=True, blank=True)
     number_of_indirect_beneficiaries = models.IntegerField(null=True, blank=True)
-    annual_cost = models.FloatField(null=True, blank=True)
-    cost_per_direct_beneficiary = models.FloatField(null=True, blank=True)
-    cost_per_indirect_beneficiary = models.FloatField(null=True, blank=True)
+    annual_cost = MoneyField(max_digits=15, decimal_places=2, default_currency='USD', null=True)
+    cost_per_direct_beneficiary = MoneyField(max_digits=15, decimal_places=2, default_currency='USD', null=True)
+    cost_per_indirect_beneficiary = MoneyField(max_digits=15, decimal_places=2, default_currency='USD', null=True)
     source = models.TextField()
     charity = models.ForeignKey(Charity)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
+
+    def save(self, *args, **kwargs):
+        print(self.cost_per_direct_beneficiary)
+        super(FinancialYear, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django_countries',
     'taggit',
     'endless_pagination',
+    'djmoney',
     'charity'
 )
 
@@ -69,12 +70,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.request',
             ],
         },
     },
 ]
-
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
 WSGI_APPLICATION = 'charityevaluator.wsgi.application'
 
 

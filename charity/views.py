@@ -19,12 +19,11 @@ class IndexView(TemplateView):
 class CharityListView(ListView):
 
     model = Charity
-    paginate_by = 10
 
     def get_queryset(self):
         queryset = Charity.objects.all().\
             exclude(latest_financial_year__cost_per_direct_beneficiary__isnull=True).\
-            order_by('-latest_financial_year__cost_per_direct_beneficiary')
+            order_by('latest_financial_year__cost_per_direct_beneficiary')
         return queryset
 
     def get_context_data(self, **kwargs):

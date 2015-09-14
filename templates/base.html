@@ -129,9 +129,11 @@
         {% endblock %}
     </div>
     <!-- /.container -->
-
+    {% bootstrap_javascript jquery=1 %}
 </body>
-
+<script>
+    $(document).ready(function(){$("[data-toggle=popover]").popover()})
+</script>
 </html>
 
 {% endblock %}
