@@ -123,7 +123,7 @@
             </table>
 
         </div>
-        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button></a>
+        <a href="{% url 'financial_year-detail-update' data.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
     </div>
     {% endfor %}
     {% include 'charity/comments.html' %}

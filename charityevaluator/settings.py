@@ -37,11 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'django_extensions',
     'bootstrap3',
     'django_countries',
     'taggit',
     'endless_pagination',
+    'djmoney_rates',
     'djmoney',
     'charity'
 )
@@ -51,6 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -80,13 +83,20 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 )
 WSGI_APPLICATION = 'charityevaluator.wsgi.application'
 
+DJANGO_MONEY_RATES = {
+    'DEFAULT_BACKEND': 'djmoney_rates.backends.OpenExchangeBackend',
+    'OPENEXCHANGE_URL': 'http://openexchangerates.org/api/latest.json',
+    'OPENEXCHANGE_APP_ID': "af5f81717e6f46c59045fc03e23afcb5",
+    'OPENEXCHANGE_BASE_CURRENCY': 'USD',
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'charity_evaluator',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'charity_evaluator',
@@ -114,5 +124,6 @@ SHELL_PLUS = 'ipython'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+GEOIP_PATH = "/var/lib/geoip/"
+GEOIP_CITY = "GeoLiteCity.dat"
 STATIC_URL = '/static/'

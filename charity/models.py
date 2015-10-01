@@ -6,7 +6,7 @@ from taggit.models import TagBase, GenericTaggedItemBase
 from django.utils.translation import ugettext_lazy as _
 from moneyed import USD
 from djmoney.models.fields import MoneyField
-
+from djmoney_rates.utils import convert_money
 
 # Create your models here.
 classifications = [('animals', 'Animals'),
@@ -63,8 +63,17 @@ class FinancialYear(models.Model):
     end_date = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
-        print(self.cost_per_direct_beneficiary)
+        for field in self._meta.fields:
+            if isinstance(field, MoneyField):
+                field_instance = getattr(self, field.name)
+                if field_instance.currency != 'USD':
+                    setattr(self, field.name, convert_money(field_instance.amount, field_instance.currency, 'USD'))
         super(FinancialYear, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse_lazy('charity-detail', kwargs={'pk': self.charity.id})
+
+
 
 
 class Comment(models.Model):
