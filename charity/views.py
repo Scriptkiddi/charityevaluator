@@ -111,9 +111,6 @@ def get_currency_for_ip(ip):
             country_name = country_lookup.get('country_name')
         country = pycountry.countries.get(name=country_name)
         currency_number = country.numeric
-        print(country.__dict__)
-        if int(country.numeric) == 276:
-            currency_number = pycountry.currencies.get(letter='EUR').numeric
         try:
             currency = pycountry.currencies.get(numeric=currency_number)
         except KeyError:
