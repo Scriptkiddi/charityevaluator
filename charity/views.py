@@ -110,7 +110,11 @@ def get_currency_for_ip(ip):
         else:
             country_name = country_lookup.get('country_name')
         country = pycountry.countries.get(name=country_name)
-        currency = pycountry.currencies.get(numeric=country.numeric)
+        country_numeric = country.numeric
+        if int(country_numeric) == 276:
+            country_numeric = '978'
+
+        currency = pycountry.currencies.get(numeric=country_numeric)
         return currency.letter
 
 
