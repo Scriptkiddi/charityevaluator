@@ -63,9 +63,12 @@ class FinancialYear(models.Model):
     end_date = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
+
         for field in self._meta.fields:
             if isinstance(field, MoneyField):
                 field_instance = getattr(self, field.name)
+                if not field_instance:
+                    continue
                 if field_instance.currency != 'USD':
                     setattr(self, field.name, convert_money(field_instance.amount, field_instance.currency, 'USD'))
         super(FinancialYear, self).save(*args, **kwargs)
