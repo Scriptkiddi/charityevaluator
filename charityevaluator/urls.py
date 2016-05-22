@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
+from charity.views import (CharityListView,
+                           CharityDetailView,
+                           CharityUpdateView,
+                           CharityCreateView,
+                           FinancialYearUpdateView,
+                           IndexView,
+                           get_charities_csv)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', IndexView.as_view(), name="home"),
+    url(r'^charities/$', CharityListView.as_view(), name="charity-list"),
+    url(r'^charities/create$', CharityCreateView.as_view(), name="charity-create"),
+    url(r'^charities/(?P<pk>[0-9]+)/$', CharityDetailView.as_view(), name='charity-detail'),
+    url(r'^charities/(?P<pk>[0-9]+)/update$', CharityUpdateView.as_view(), name='charity-detail-update'),
+    url(r'^financial_year/(?P<pk>[0-9]+)/update$', FinancialYearUpdateView.as_view(), name='financial_year-detail-update'),
+    url(r'^charities/download$', get_charities_csv, name='charity-csv-download'),
 ]

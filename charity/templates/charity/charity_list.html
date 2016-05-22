@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load endless %}
+{% load djmoney %}
+{% money_localize money%}
+{%  block content %}
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading </div>
+<a class="btn btn-default " href="{% url 'charity-csv-download' %}" role="button"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>Download</a>
+  <div class="panel-body">
+    <!-- Table -->
+
+  </div>
+  <table class="table">
+    <tr>
+        <th>Classification</th>
+        <th>Name</th>
+        <th>cost per direct beneficiary</th>
+        <th>cost per indirect beneficiary</th>
+        <th></th>
+    </tr>
+  {% paginate object_list %}
+      {% for charity in object_list %}
+          <tr>
+            <td>{{ charity.classification }}</td>
+            <td>{{ charity.name }}</td>
+          {% if charity.latest_financial_year.cost_per_direct_beneficiary%}
+            <td>{% money_localize charity.latest_financial_year.cost_per_direct_beneficiary currency%}</td>
+          {% else %}
+              <td></td>
+          {% endif %}
+          {% if charity.latest_financial_year.cost_per_indirect_beneficiary%}
+            <td>{% money_localize charity.latest_financial_year.cost_per_indirect_beneficiary currency%}</td>
+          {% else %}
+              <td></td>
+          {% endif %}
+            <td>
+                <button type="button"
+                        class="btn btn-info"
+                        data-toggle="popover"
+                        title="Exchange rates"
+                        data-content="We save all money amounts in USD so we used the conversion rates from {{ charity.latest_financial_year.end_date }} to present you this number">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </button>
+            </td>
+            <td><a href="{% url 'charity-detail' pk=charity.id %}"><button type="button" class="btn btn-primary">More</button></a></td>
+          </tr>
+      {% endfor %}
+  </table>
+<!-- Usage as a class -->
+<div style="display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; align-items: center; justify-content: center;">
+{% get_pages %}
+<ul class="pagination center-block" >
+{% for page in pages %}
+    <li><a href="{{ page.url }}">{{ page.number }}</a></li>
+{% endfor %}
+</ul>
+</div>
+</div>
+
+{%  endblock %}

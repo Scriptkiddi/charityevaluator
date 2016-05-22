@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="page-header">
+
+
+      <h1>{{ object.name }} <small>{{ object.classification }}</small></h1>
+
+    </div>
+{% endblock %}
+
+{%  block content %}
+    <h3>Details {{ last_financialyear.start_date.year }}</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% if object.logo %}
+                    <img style="height:140px; float:left" src="{{ object.logo }}" class="thumbnail"></td></tr>
+                {% endif %}
+            <table class="table table-hover">
+                {% if object.description %}
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ object.description }}</td>
+                    </tr>
+                {% endif %}
+                {% if last_financialyear.number_of_direct_beneficiaries %}
+                    <tr>
+                        <td>Number of direct beneficiaries</td>
+                        <td>{{ last_financialyear.number_of_direct_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if last_financialyear.number_of_indirect_beneficiaries %}
+                    <tr>
+                        <td>Number of indirect beneficiaries</td>
+                        <td>{{ last_financialyear.number_of_indirect_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if last_financialyear.annual_cost %}
+                    <tr>
+                        <td>Annual Cost</td>
+                        <td>{{ last_financialyear.annual_cost }}</td>
+                    </tr>
+                {% endif %}
+                {% if last_financialyear.cost_per_direct_beneficiary %}
+                    <tr>
+                        <td>Cost per direct beneficiary</td>
+                        <td>{{ last_financialyear.cost_per_direct_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if last_financialyear.cost_per_indirect_beneficiary %}
+                    <tr>
+                        <td>Cost per indirect beneficiary</td>
+                        <td>{{ last_financialyear.cost_per_indirect_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.country.name %}
+                    <tr>
+                        <td>Country</td>
+                        <td><img src="{{ object.country.flag }}"\>  {{ object.country.name }}</td>
+                    </tr>
+                {% endif %}
+                {% if object.source %}
+                    <tr>
+                        <td>This information is from</td>
+                        <td><a href="{{ object.source }}">{{ object.source }}</a></td>
+                    </tr>
+                {% endif %}
+
+            </table>
+
+        </div>
+        <a href="{% url 'charity-detail-update' object.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+    </div><h3>Historic</h3>
+    {% for data in financialyears %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            {{ data.start_date.year }} ({{ data.start_date.month }}/{{ data.start_date.year }}-{{ data.end_date.month }}/{{ data.end_date.year }})
+            <table class="table table-hover">
+                {% if data.description %}
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ data.description }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.number_of_direct_beneficiaries %}
+                    <tr>
+                        <td>Number of direct beneficiaries</td>
+                        <td>{{ data.number_of_direct_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.number_of_indirect_beneficiaries %}
+                    <tr>
+                        <td>Number of indirect beneficiaries</td>
+                        <td>{{ data.number_of_indirect_beneficiaries }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.annual_cost %}
+                    <tr>
+                        <td>Annual Cost</td>
+                        <td>{{ data.annual_cost }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.cost_per_direct_beneficiary %}
+                    <tr>
+                        <td>Cost per direct beneficiary</td>
+                        <td>{{ data.cost_per_direct_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.cost_per_indirect_beneficiary %}
+                    <tr>
+                        <td>Cost per indirect beneficiary</td>
+                        <td>{{ data.cost_per_indirect_beneficiary }}</td>
+                    </tr>
+                {% endif %}
+                {% if data.source %}
+                    <tr>
+                        <td>This information is from</td>
+                        <td><a href="{{ data.source }}">{{ data.source }}</a></td>
+                    </tr>
+                {% endif %}
+
+            </table>
+
+        </div>
+        <a href="{% url 'financial_year-detail-update' data.id %}"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button></a>
+    </div>
+    {% endfor %}
+    {% include 'charity/comments.html' %}
+
+{%  endblock %}
