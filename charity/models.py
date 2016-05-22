@@ -30,17 +30,6 @@ class CharityTag(TagBase):
 
 
 class Charity(models.Model):
-<<<<<<< HEAD
-    classification = models.CharField(max_length=200)
-    name = models.CharField(max_length=300)
-    number_of_direct_beneficiaries = models.IntegerField()
-    number_of_indirect_beneficiaries = models.IntergerField()
-    annual_cost = models.FloatField()
-    cost_per_direct_beneficiary = models.FloatField()
-    cost_per_indirect_beneficiary = models.FloatField()
-    comments = models.TextField()
-    source = models.TextField()
-=======
     created = models.DateTimeField(auto_now_add=True)
     classification = models.CharField(max_length=200, choices=classifications, default="unclassified")
     name = models.CharField(max_length=300)
@@ -99,4 +88,3 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-date']
->>>>>>> 9a42c3a32ced5e23f968a9ea7ce9a3d8e875e03b
