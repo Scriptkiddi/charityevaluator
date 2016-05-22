@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Charity(models.Model):
-    classification = models.CharField(max_length=200)7
+    classification = models.CharField(max_length=200)
     name = models.CharField(max_length=300)
     number_of_direct_beneficiaries = models.IntegerField()
     number_of_indirect_beneficiaries = models.IntergerField()
